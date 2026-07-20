@@ -1,0 +1,251 @@
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #1e293b, #312e81);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Heading */
+
+#heading {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: #facc15;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#para {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #cbd5e1;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Button Container */
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+/* Game Buttons */
+
+.btn {
+  width: 170px;
+  height: 170px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-8px) scale(1.05);
+  border-color: #38bdf8;
+  box-shadow: 0 15px 30px rgba(56, 189, 248, .35);
+}
+
+.btn:active {
+  transform: scale(.95);
+}
+
+/* Images */
+
+.stone-img,
+.paper-img,
+.scissors-img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  transition: transform .3s;
+}
+
+.btn:hover img {
+  transform: rotate(10deg) scale(1.1);
+}
+
+/* Labels */
+
+h3 {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  color: white;
+}
+
+/* Result */
+
+#result {
+  margin-top: 20px;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Score Box */
+
+#score {
+  margin-top: 20px;
+  width: min(420px, 90vw);
+
+  padding: 18px;
+
+  border-radius: 18px;
+
+  background: rgba(255,255,255,.08);
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,.15);
+
+  text-align: center;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* Reset Button */
+
+.reset {
+  margin-top: 30px;
+  padding: 14px 35px;
+
+  border: none;
+  border-radius: 50px;
+
+  background: linear-gradient(135deg,#22c55e,#06b6d4);
+
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: .3s;
+}
+
+.reset:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(6,182,212,.4);
+}
+
+.reset:active {
+  transform: scale(.95);
+}
+
+/* ------------------ Responsive ------------------ */
+
+@media (max-width: 992px) {
+
+  .btn {
+    width: 150px;
+    height: 150px;
+  }
+
+  .stone-img,
+  .paper-img,
+  .scissors-img {
+    width: 75px;
+    height: 75px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  body {
+    padding: 15px;
+  }
+
+  .btn-container {
+    gap: 18px;
+  }
+
+  .btn {
+    width: 130px;
+    height: 130px;
+  }
+
+  .stone-img,
+  .paper-img,
+  .scissors-img {
+    width: 65px;
+    height: 65px;
+  }
+
+  h3 {
+    font-size: .95rem;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  #heading {
+    margin-bottom: 5px;
+  }
+
+  #para {
+    margin-bottom: 20px;
+  }
+
+  .btn-container {
+    gap: 12px;
+  }
+
+  .btn {
+    width: 110px;
+    height: 110px;
+    border-radius: 18px;
+  }
+
+  .stone-img,
+  .paper-img,
+  .scissors-img {
+    width: 55px;
+    height: 55px;
+  }
+
+  h3 {
+    font-size: .85rem;
+    margin-top: 8px;
+  }
+
+  #score {
+    width: 100%;
+    font-size: .95rem;
+    padding: 15px;
+  }
+
+  .reset {
+    width: 100%;
+    max-width: 260px;
+    padding: 12px;
+  }
+
+}
